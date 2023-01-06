@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "xvideos genre filter",
+  "version": "0.7",
+  "description": "Filters out specific genre from xvideos note: only works on cuckolding for now",
+
+  "icons": {
+    "16": "images/xIcon16.png",
+    "32": "images/xIcon32.png",
+    "48": "images/xIcon48.png",
+    "128": "images/xIcon128.png"
+  },
+
+  "action": {
+    "default_popup": "hello.html"
+  },
+
+  "content_scripts": [
+    {
+        "js": ["scripts/jquery-3.6.3.min.js"],
+        "matches": [
+          "https://www.xvideos.com/*"
+          ,"https://www.xvideos.com/video*"
+        ]
+      },
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://www.xvideos.com/video*"
+      ]
+    },
+    {
+        "js": ["scripts/homePage.js"],
+        "matches": [
+          "https://www.xvideos.com/*"
+        ]
+      }
+
+  ]
+
+
+}
